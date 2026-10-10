@@ -1,5 +1,9 @@
 # team-formation
 
+[![tests](https://github.com/M-Colley/team-formation/actions/workflows/tests.yml/badge.svg)](https://github.com/M-Colley/team-formation/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.11 | 3.12 | 3.13 | 3.14](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue.svg)](.github/workflows/tests.yml)
+
 Evidence-based student team formation for project courses. Students answer a short private survey (Microsoft Forms or Google Forms). Staff paste the class list and the survey export into an Excel workbook. A constraint programming model (Google OR-Tools CP-SAT) then assigns every student to a team and proves that the result is optimal.
 
 Students do not choose their teams. Self selection among students who barely know each other produces homogeneous teams and leaves a group of students nobody chose (Oakley et al., 2004). Instead, the tool applies explicit, published criteria in a strict order of priority:
@@ -27,7 +31,7 @@ It was first used to form the project teams of an Interaction Design module at U
 
 ## Quick start
 
-You need Python 3.10 or newer.
+You need Python 3.11 or newer (tested on 3.11 to 3.14).
 
 ```bash
 git clone https://github.com/M-Colley/team-formation.git
@@ -130,7 +134,7 @@ After formation, each team can write a team charter with its mentor (Mathieu & R
 .venv/bin/python -m pytest -q
 ```
 
-The tests run on GitHub Actions for Windows, macOS and Linux. They check, among other things, that the fictional cohort of 59 forms 11 teams of 5 and 1 of 4 with no lone woman or man and enough shared free time; that each criterion outranks the next, also in a case where a weighted sum gave up a free block to close nine skill gaps; that non-respondents are spread; that Microsoft Forms `.xlsx` exports and Google Forms CSV exports are read in full; that names link in any word order and ambiguous names are never guessed; that keep apart texts such as `Lee, Sam` and `N/A` are read correctly; that Report numbers are measured on the final teams; and that two `--deterministic` runs give identical teams.
+The tests run on GitHub Actions for Windows, macOS and Linux with Python 3.11, 3.12, 3.13 and 3.14. They check, among other things, that the fictional cohort of 59 forms 11 teams of 5 and 1 of 4 with no lone woman or man and enough shared free time; that each criterion outranks the next, also in a case where a weighted sum gave up a free block to close nine skill gaps; that non-respondents are spread; that Microsoft Forms `.xlsx` exports and Google Forms CSV exports are read in full; that names link in any word order and ambiguous names are never guessed; that keep apart texts such as `Lee, Sam` and `N/A` are read correctly; that Report numbers are measured on the final teams; and that two `--deterministic` runs give identical teams.
 
 ## Citation and licence
 

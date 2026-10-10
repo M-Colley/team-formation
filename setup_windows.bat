@@ -3,8 +3,8 @@ rem One-time setup: creates a private Python environment (.venv) in this folder
 rem and installs the packages from requirements.txt. Nothing else on the PC is changed.
 cd /d "%~dp0"
 where py >nul 2>nul && (set "PY=py -3") || (set "PY=python")
-%PY% --version >nul 2>nul || (
-  echo Python 3.10 or newer is needed. Install it from https://www.python.org/downloads/
+%PY% -c "import sys; sys.exit(sys.version_info < (3, 11))" >nul 2>nul || (
+  echo Python 3.11 or newer is needed. Install it from https://www.python.org/downloads/
   echo and tick "Add python.exe to PATH" during installation, then run this file again.
   pause & exit /b 1
 )
