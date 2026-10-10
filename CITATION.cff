@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "team-formation: evidence-based student team formation with constraint programming"
+abstract: >-
+  Staff collect a short private survey, paste it and the class list into an Excel workbook, and a
+  constraint programming model (Google OR-Tools CP-SAT) assigns every student to a project team. The
+  criteria are optimised in strict order of priority: no lone woman or man, shared free time, the
+  worst team's skill gaps, at most one non-respondent per team, skill coverage and discipline mix.
+authors:
+  - family-names: Colley
+    given-names: Mark
+version: 2.1.0
+date-released: "2026-10-10"
+license: MIT
+repository-code: "https://github.com/M-Colley/team-formation"
+keywords:
+  - team formation
+  - group work
+  - higher education
+  - constraint programming
+  - OR-Tools
+  - CP-SAT
