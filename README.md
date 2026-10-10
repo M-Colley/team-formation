@@ -4,6 +4,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.11 | 3.12 | 3.13 | 3.14](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue.svg)](.github/workflows/tests.yml)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/header_dark.svg">
+  <img src="docs/header_light.svg" width="100%" alt="Team composition for a fictional cohort of 59 students in 12 teams. Each team mixes students from psychology, computer science, design and other backgrounds, has at most one student without a survey response, and has a member rated 4 or 5 for most of the nine skills. Every team shares at least two free time blocks.">
+</picture>
+
 Evidence-based student team formation for project courses. Students answer a short private survey (Microsoft Forms or Google Forms). Staff paste the class list and the survey export into an Excel workbook. A constraint programming model (Google OR-Tools CP-SAT) then assigns every student to a team and proves that the result is optimal.
 
 Students do not choose their teams. Self selection among students who barely know each other produces homogeneous teams and leaves a group of students nobody chose (Oakley et al., 2004). Instead, the tool applies explicit, published criteria in a strict order of priority:
@@ -64,6 +69,7 @@ Wrote out/example_intake_teams.xlsx
 | `layout.py` | Cell positions and defaults shared by both scripts |
 | `docs/survey_template_microsoft_forms.pdf` | The survey as students see it |
 | `examples/example_intake.xlsx` | A filled-in fictional workbook (`tests/make_example.py` rebuilds it) |
+| `docs/make_header.py` | Draws the header figure from the example's teams (needs `matplotlib`) |
 
 1. **Settings.** Set the team size (default 4 to 5), the strong skill threshold, the number of shared free time blocks each team needs, the lists of skills, disciplines, time blocks and gender options, the mentors and the deadline.
 2. **Survey.** Create the survey listed on the *Form questions* sheet. For Microsoft Forms you can start from the ready-made template: [open it and choose *Duplicate it*](https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=_oivH5ipW0yTySEKEdmlwsMs234pDzRDm53PQ_RJizRUODZJRFg5U0FZVVpWVFVER0hBUjRVOUVMMS4u&sharetoken=zwZvhE7fBUXZazQiGD5q) ([PDF preview](docs/survey_template_microsoft_forms.pdf)). Restrict it to your organisation and record names (Microsoft Forms) or verified emails (Google Forms). The question titles are what the allocator searches for, so keep them identical to *Settings* column Q.
